@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/style.css">
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="script.js"></script>
+    <script src="dados.js"></script>
+    <title>Landing page</title>
+</head>
+<body>
+    <header>
+        
+        <nav id="navbar">
+            <i class="" id="nav_logo"><img src="imgs/logo.png" alt=""></i>
+            <div id="nav_center">
+                <input id="campo-pesquisa" type="text" placeholder="Pesquise aqui...">
+                <button onclick="redirecionarPesquisa()">Pesquisar</button>
+            </div>
+
+            <ul id="nav_list">
+                <li class="nav-item active">
+                    <a href="#home">Início</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#menu">Sabores <i class="fa-solid fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#bolo-morango">Morango & Nutella</a></li>
+                        <li><a href="#bolo-chocolate">Trufado de Chocolate</a></li>
+                        <li><a href="#bolo-coco">Coco & Abacaxi</a></li>
+                        <li><a href="#bolo-nozes">Bolo de Nozes com Doce de Leite</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="menu.html">Menu <i class="fa-solid fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="menu.html#bolos">Bolos</a></li>
+                        <li><a href="menu.html#tortas">Tortas</a></li>
+                        <li><a href="menu.html#doces">Doces</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            
+            <button class="open-modal" id="login-button">
+                <a href="login.html">Login</a>
+             </button>
+             
+             <span id="user-info" style="display:none; font-weight: bold; margin-left: 10px;"></span>
+             <button id="logout-button" style="display:none; margin-left: 10px;">Logout</button>
+        
+        </nav>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item">
+                    <a href="#home">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu">Sabores</a>
+                </li>
+            </ul>
+
+            <button class="open-modal" id="login-button">
+                <a href="login.html">Login</a>
+             </button>
+             
+             <span id="user-info" style="display:none; font-weight: bold; margin-left: 10px;"></span>
+             <button id="mobile-logout-button" style="display:none; margin-left: 10px;">Logout</button>
+        </div>
+    </header>
+    
+
+    <main id="content">
+        <section id="home">
+            <div class="shape"> <img src="imgs/shape.png" alt=""></div>
+            <div id="cta">
+                <h1 class="title">
+                    O sabor que vai até
+                    <span>você</span>
+                </h1>
+
+                <p class="description">
+                    Do nosso forno para o seu coração — bolos que derretem sorrisos!
+                </p>
+
+                <div id="cta_buttons">
+                    <a href="#" class="btn-default">
+                        Ver sabores
+                    </a>
+
+                    <a href="tel:+55555555555" id="phone_button">
+                        <button class="btn-default">
+                            <i class="fa-solid fa-phone"></i>
+                        </button>
+                        (99) 4002-8922
+                    </a>
+                </div>
+
+                <div class="social-media-buttons">
+                    <a href="">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a href="">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="menu">
+            <h2 class="section-title">Sabores</h2>
+            <h3 class="section-subtitle">Nossos sabores especiais</h3>
+
+            <div id="dishes">
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="imgs/bolo1.jpg" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Bolo de Morango com Leite Ninho e Nutella
+                    </h3>
+
+                    <span class="dish-description">
+                        Camadas fofinhas de massa branca, recheadas com creme de Leite Ninho, morangos frescos e uma generosa camada de Nutella. 
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$20,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="imgs/bolo2.jpg" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Bolo Trufado de Chocolate com Framboesa
+                    </h3>
+
+                    <span class="dish-description">
+                        Massa de chocolate super úmida, recheada com trufa cremosa e geleia artesanal de framboesa.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$20,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="imgs/bolo3.jpg" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Bolo de Coco Cremoso com Abacaxi 
+                    </h3>
+
+                    <span class="dish-description">
+                        Massa leve com coco fresco, recheada com creme de coco e pedacinhos de abacaxi caramelizado. 
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$20,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="imgs/bolo4.jpg" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Bolo de Nozes com Doce de Leite 
+                    </h3>
+
+                    <span class="dish-description">
+                        Massa amanteigada com pedacinhos de nozes, recheada com doce de leite cremoso e finalizada com uma camada crocante de caramelo. 
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$20,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu">
+            <h3 class="section-subtitle">Os favoritos do momento</h3>
+
+            <div id="dishes">
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="imgs/bolo5.jpg" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Bolo Red Velvet com Recheio de Cream Cheese
+                    </h3>
+
+                    <span class="dish-description">
+                        Um clássico elegante com massa vermelha aveludada e sabor suave de cacau. 
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$20,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="imgs/bolo6.jpg" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Bolo de Limão Siciliano com Ganache de Chocolate Branco
+                    </h3>
+
+                    <span class="dish-description">
+                        Refrescante e sofisticado, esse bolo combina a acidez marcante do limão siciliano com a doçura suave do chocolate branco.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$20,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="imgs/bolo7.jpg" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Bolo Trufado de Chocolate com Frutas Vermelhas
+                    </h3>
+
+                    <span class="dish-description">
+                        Camadas de massa de chocolate intenso, intercaladas com trufa cremosa e um leve toque de frutas vermelhas. 
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$20,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="imgs/bolo9.jpg" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Bolo de Pistache com Recheio de Ganache de Chocolate Branco
+                    </h3>
+
+                    <span class="dish-description">
+                        Elegante e sofisticado, esse bolo traz o sabor marcante e levemente amanteigado do pistache em uma massa úmida e aromática.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$20,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu">
+            <h3 class="section-subtitle"> Sabores tradicionais </h3>
+
+            <div id="dishes">
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="imgs/bolo10.jpg" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Bolo de Fubá
+                    </h3>
+
+                    <span class="dish-description">
+                       Tradicional nas festas juninas brasileiras, feito com farinha de milho (fubá). 
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$20,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="imgs/bolo11.jpg" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                       Bolo de Cenoura
+                    </h3>
+
+                    <span class="dish-description">
+                      Massa fofinha e levemente adocicada, feita com cenoura ralada ou batida. Tradicionalmente coberto com calda de chocolate.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$20,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+               
+            </div>
+        </section>
+
+
+       
+
+       
+    </main>
+
+    <footer>
+        <img src="src/images/wave.svg" alt="">
+
+        <div id="footer_items">
+            <span id="copyright">
+                &copy 2024 Grazzi
+            </span>
+
+            <div class="social-media-buttons">
+                <a href="">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <a href="">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+<script src="https://www.gstatic.com/firebasejs/11.8.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.8.1/firebase-auth-compat.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyA2FRZFK6IjLEVgQEKpprf0eXBQDjpLhwg",
+        authDomain: "loja-223f0.firebaseapp.com",
+        projectId: "loja-223f0",
+        storageBucket: "loja-223f0.appspot.com",
+        messagingSenderId: "709201353787",
+        appId: "1:709201353787:web:5e8800208c23ee19c4101e",
+        measurementId: "G-2SS7W42K7Q"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    const loginButton = document.getElementById('login-button');
+    const userInfo = document.getElementById('user-info');
+    const logoutButton = document.getElementById('logout-button');
+
+    const mobileLoginButton = document.getElementById('mobile-login-button');
+    const mobileUserInfo = document.getElementById('mobile-user-info');
+    const mobileLogoutButton = document.getElementById('mobile-logout-button');
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        const justLoggedIn = localStorage.getItem("justLoggedIn");
+        if (user && justLoggedIn === "true") {
+            // Substitui botão de login
+            
+            loginButton.style.display = 'none';
+            userInfo.style.display = 'inline';
+            userInfo.textContent = `Olá, ${user.email}`;
+            logoutButton.style.display = 'inline';
+
+            mobileLoginButton.style.display = 'none';
+            mobileUserInfo.style.display = 'inline';
+            mobileUserInfo.textContent = `Olá, ${user.email}`;
+            mobileLogoutButton.style.display = 'inline';
+
+
+            // Limpa flag para não repetir
+            localStorage.removeItem("justLoggedIn");
+        }
+    });
+
+       // Logout
+    logoutButton.addEventListener('click', function() {
+        firebase.auth().signOut().then(() => {
+            resetUI();
+        });
+    });
+
+    mobileLogoutButton.addEventListener('click', function() {
+        firebase.auth().signOut().then(() => {
+            resetUI();
+        });
+    });
+
+    function resetUI() {
+        loginButton.style.display = 'inline-block';
+        userInfo.style.display = 'none';
+        logoutButton.style.display = 'none';
+
+        mobileLoginButton.style.display = 'inline-block';
+        mobileUserInfo.style.display = 'none';
+        mobileLogoutButton.style.display = 'none';
+
+        localStorage.removeItem("justLoggedIn");
+    }
+</script>
+
+</body>
+</html>

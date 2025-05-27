@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados da Pesquisa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Font Awesome e CSS existente -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Scripts -->
+    <script src="dados.js"></script>
+    <script src="script.js"></script>
+
+    <style>
+        body {
+            background-color: #fddde6;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffe9f0;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #a52a5a;
+        }
+
+        #back-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #c1f1d2;
+            color: #333;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        #back-button:hover {
+            background-color: #aee0be;
+        }
+
+        #resultados-pesquisa {
+            padding: 40px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .dish {
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 260px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .dish:hover {
+            transform: translateY(-5px);
+        }
+
+        .dish-image {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .dish-title {
+            font-size: 1.2rem;
+            margin: 15px 0 10px;
+            color: #333;
+        }
+
+        .dish-description {
+            font-size: 0.9rem;
+            color: #555;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .dish-rate i {
+            color: #f58b8b;
+        }
+
+        .dish-price {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-default {
+            background-color: #c1f1d2;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #333;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-default:hover {
+            background-color: #aee0be;
+        }
+
+        .logo img {
+            height: 135px; 
+            width: auto;
+            object-fit: contain;
+        }
+
+        #navbar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav id="navbar">
+        <i class="" id="nav_logo"><img src="imgs/logo.png" alt=""></i>
+    
+        <h1>Resultados da Pesquisa</h1>
+        <a href="index.html" id="back-button"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="resultados-pesquisa"></div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const termo = localStorage.getItem("termoPesquisa")?.toLowerCase();
+            const section = document.getElementById('resultados-pesquisa');
+
+            if (!termo) {
+                section.innerHTML = "<p style='text-align:center;'>Nenhuma pesquisa realizada.</p>";
+                return;
+            }
+
+            const produtosFiltrados = dados.filter(dado => {
+                return dado.nome.toLowerCase().includes(termo) ||
+                       dado.descricao.toLowerCase().includes(termo);
+            });
+
+            if (!produtosFiltrados.length) {
+                section.innerHTML = `<p style="text-align:center; font-size: 1.2rem;">Nenhum produto encontrado para <strong>"${termo}"</strong>.</p>`;
+            } else {
+                exibirProdutos(produtosFiltrados);
+            }
+        });
+    </script>
+
+</body>
+</html>
